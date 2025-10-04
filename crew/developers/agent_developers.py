@@ -1,4 +1,5 @@
 from crewai import Agent
+from crew.tools.tools_developer import *
 
 editor_doc = Agent(
     role="Engenheiro de Documentação",
@@ -14,7 +15,7 @@ editor_doc = Agent(
     llm="gpt-4o-mini",
     function_calling_llm="gpt-4o-mini",
     verbose=True,
-    tools=[]
+    tools=[tool_read_directory, tool_read_files]
 )
 
 
@@ -32,7 +33,7 @@ tester = Agent(
     llm="gpt-4o-mini",
     function_calling_llm="gpt-4o-mini",
     verbose=True,
-    tools=[]
+    tools=[tool_read_directory, tool_read_files]
 )
 
 
@@ -51,6 +52,6 @@ editor_review = Agent(
     llm="gpt-4o-mini",
     function_calling_llm="gpt-4o-mini",
     verbose=True,
-    tools=[]
+    tools=[tool_read_directory, tool_read_files]
 )
 
