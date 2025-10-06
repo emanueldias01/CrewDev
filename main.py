@@ -19,7 +19,7 @@ def main():
     input_dir = {'diretorio' : dir}
 
     crew.kickoff(inputs=input_dir)
-
+    print(crew.usage_metrics)
 
 
 if __name__ == "__main__":
