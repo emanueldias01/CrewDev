@@ -6,9 +6,10 @@ with open('key.txt', 'r') as file:
 os.environ['OPENAI_API_KEY'] = key
 os.environ['CHROMA_OPENAI_API_KEY'] = key
 
-from crew.crew import crew
+from crew.dev_crews.crews import crew_doc, crew_test, crew_review
+import asyncio
 
-def main():
+async def main():
 
     dir = input('Diretório: ').strip()
 
@@ -18,9 +19,15 @@ def main():
 
     input_dir = {'diretorio' : dir}
 
-    crew.kickoff(inputs=input_dir)
-    print(crew.usage_metrics)
+    results = await asyncio.gather(
+        crew_doc.kickoff_async(inputs=input_dir),
+        crew_test.kickoff_async(inputs=input_dir),
+        crew_review.kickoff_async(inputs=input_dir)
+    )
 
+    print(f"Doc crew metrics: {crew_doc.usage_metrics}")
+    print(f"Test crew metrics: {crew_test.usage_metrics}")
+    print(f"Review crew metrics: {crew_review.usage_metrics}")
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())

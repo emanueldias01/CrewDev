@@ -23,6 +23,7 @@ write_doc = Task(
         "incluindo descrições de módulos, classes, funções, dependências e exemplos práticos."
     ),
     markdown=True,
+    async_execution=True,
     output_file="documentation.md"
 )
 
@@ -46,6 +47,7 @@ write_tests = Task(
         "cada um com nome, descrição, código e justificativa. Os testes devem refletir o comportamento real do código."
     ),
     markdown=True,
+    async_execution=True,
     output_file="tests.md"
 )
 
@@ -68,5 +70,6 @@ review = Task(
         "indicando falhas, más práticas e recomendações detalhadas de melhoria."
     ),
     markdown=True,
+    async_execution=True,
     output_file="review.md"
 )
