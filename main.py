@@ -7,11 +7,8 @@ os.environ['OPENAI_API_KEY'] = key
 os.environ['CHROMA_OPENAI_API_KEY'] = key
 
 from crew.crew import crew
-import asyncio
 
-
-
-async def main():
+def main():
 
     dir = input('Diretório: ').strip()
 
@@ -21,9 +18,9 @@ async def main():
 
     input_dir = {'diretorio' : dir}
 
-    await crew.kickoff_async(inputs=input_dir)
+    crew.kickoff(inputs=input_dir)
 
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
