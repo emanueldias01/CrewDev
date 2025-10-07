@@ -15,7 +15,7 @@ O sistema é composto por três agentes especializados que trabalham em paralelo
 - Geração automática de **documentação técnica completa** do projeto.  
 - Criação de **testes unitários** contextualizados, com código e justificativas.  
 - Análise estática de **falhas, vulnerabilidades e más práticas** no código.  
-- Execução **assíncrona e paralela**, permitindo que todos os agentes trabalhem simultaneamente.  
+- Execução **assíncrona e paralela**, permitindo que todos os agentes trabalhem simultaneamente.(O codigo da branch main é síncrono, mas existe uma branch de nome "async" com a execucao de tarefas assíncrona)  
 - Saídas em **Markdown**, salvas automaticamente (`documentation.md`, `tests.md`, `review.md`).  
 
 ## Como rodar:
