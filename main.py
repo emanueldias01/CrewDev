@@ -5,7 +5,6 @@ from pathlib import Path
 crewdev_path = Path.home() / ".local" / "share" / "CrewDev"
 
 if crewdev_path.exists():
-    print("existe e apagou")
     shutil.rmtree(crewdev_path)
 
 
