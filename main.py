@@ -1,4 +1,12 @@
 import os
+import shutil
+from pathlib import Path
+
+crewdev_path = Path.home() / ".local" / "share" / "CrewDev"
+
+if crewdev_path.exists():
+    shutil.rmtree(crewdev_path)
+
 
 with open('key.txt', 'r') as file:
         key = file.readline().strip()
